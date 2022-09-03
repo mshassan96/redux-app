@@ -2,8 +2,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
+import { useSelector } from "react-redux";
 
 const TopBar = () => {
+  const amount = useSelector((state) => state.amount);
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -16,7 +18,7 @@ const TopBar = () => {
             className="d-flex justify-content-end disabled"
             variant="outline-light"
           >
-            Balance: 1000
+            Balance: {amount}
           </Button>
         </Container>
       </Navbar>
